@@ -1,8 +1,6 @@
-# Beddit
+
 A reddit clone written using node.js / express.js / mongodb / passport.js
 
-### Website:
-https://seiya-beddit.herokuapp.com/
 
 ![Image](https://i.imgur.com/HbpGIZP.png)
 
