@@ -13,6 +13,8 @@ router.get('/submit/subreddit', submit_controller.subreddit_view);
 router.post('/submit/post', submit_controller.front_post);
 router.post('/submit/link', submit_controller.front_link);
 router.post('/submit/subreddit', submit_controller.subreddit);
+router.post('/submit/company',submit_controller.company);
+router.get('/submit/company', submit_controller.subreddit_view);
 router.post('/search', submit_controller.front_search);
 
 module.exports = router;

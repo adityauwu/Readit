@@ -21,4 +21,4 @@ router.get('/:subreddit/:id', function (req, res) {
     res.redirect(`/r/${req.params.subreddit}/${req.params.id}/comments`)
 });
 
-module.exports = router
+module.exports = router;

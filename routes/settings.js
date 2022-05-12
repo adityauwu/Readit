@@ -19,4 +19,4 @@ function authenticateUser() {
     };
 }
 
-module.exports = router
+module.exports = router;

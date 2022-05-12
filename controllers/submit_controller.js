@@ -1,7 +1,7 @@
 let Subreddit = require("../models/subreddit");
 let Post = require("../models/post");
 let Profile = require("../models/profile");
-
+let company = require("../models/company");
 exports.subreddit_post_view = function (req, res) {
     let subscribed = false
     let karma = 0
@@ -269,6 +269,34 @@ exports.subreddit = function (req, res) {
     });
 }
 
+exports.company = function (req, res) {
+    Profile.update({
+            username: req.session.user
+        }, {
+            $push: {
+                owned: req.body.subreddit
+            }
+        },
+        function (err, doc) {
+            if (err) throw err;
+
+        }).then(function () {
+        company({
+            name: req.body.subreddit,
+            description: req.body.description,
+            test: 4
+        }).save(function (err, doc) {
+            if (err) throw err
+          console.log(`a new ${req.body.subreddit} added`)
+            //console.log(`[Frontpage] ${req.body.company} subreddit created`)
+            res.redirect('/');
+        });
+    });
+}
+
+
+
+
 // SEARCHING FOR A POST
 exports.front_search = function (req, res) {
     let subscribed = undefined;
@@ -295,7 +323,7 @@ exports.front_search = function (req, res) {
                 })
                 .then(function () {
                     Post.find({
-                            title: {
+                            subreddit: {
                                 $regex: '.*' + req.body.query + '.*',
                                 $options: 'i'
                             }

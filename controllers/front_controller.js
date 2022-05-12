@@ -2,6 +2,8 @@ let Subreddit = require("../models/subreddit");
 let Post = require("../models/post");
 let Profile = require("../models/profile");
 let PostState = require("../models/postState")
+let Company= require("../models/company")
+
 
 exports.get_all = function (req, res) {
     let subscribed = undefined;
@@ -9,7 +11,7 @@ exports.get_all = function (req, res) {
     let posts = undefined;
     let karma = 0;
     let sort = undefined;
-
+    let companies= undefined;
     switch (req.query.sort) {
         case "top":
             sort = {
@@ -49,6 +51,13 @@ exports.get_all = function (req, res) {
                 subreddits = doc
             }
         }).then(function () {
+            Company.find({}, function (err, doc) {
+                if (err) throw err;
+
+                if (doc.length) {
+                    companies = doc
+                }
+            }).then(function () {
             PostState.find({
                 username: req.session.user
             }, function (err, doc) {
@@ -70,10 +79,12 @@ exports.get_all = function (req, res) {
                         subreddits: subreddits,
                         subscribed: subscribed,
                         karma: karma,
+                        company: companies,
                         isAuth: req.isAuthenticated()
                     })
                 });
             });
         });
     });
+});
 }

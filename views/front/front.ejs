@@ -11,14 +11,13 @@
         <div class="sidebar">
             <%- include('../partials/sidebar_index_actions') %>
             <%- include('../partials/sidebar_index_subscribed', {isAuth, subscribed}) %>
-            <%- include('../partials/sidebar_index_subreddits', {subreddits}) %>
+            <%- include('../partials/company', {company}) %>
         </div>
 
-        <div class="main">
-                <%- include('../partials/sort') %>
 
 
-                <% if (posts != undefined) {
+     <div>
+            <% if (posts != undefined) {
                     posts.forEach((post) => { %>
             <article class="post" data-ref="<%= post._id %>">
                 <div class="arrows">
