@@ -33,7 +33,7 @@ A Website where you can post recently asked interview questions , written using 
 
 <a href="https://imgur.com/kE8q5eJ"><img src="https://i.imgur.com/kE8q5eJ.png" title="source: imgur.com" /></a>
 
-<a href="https://imgur.com/kE8q5eJ"><img src="https://i.imgur.com/kE8q5eJ.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/3ihirEH"><img src="https://i.imgur.com/3ihirEH.png" title="source: imgur.com" /></a>
 
 
 
