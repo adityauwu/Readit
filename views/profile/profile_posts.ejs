@@ -6,14 +6,14 @@
     <%- include('../partials/nav', {user: locals.user, karma}) %>
     <%- include('../partials/jumbotron', {name: profile_user}) %>
     <span id="auth"><%= isAuth %></span>
-
+    <link rel="stylesheet" type="text/css" href="/css/auth.css">
     <div class="grid-container">
         <div class="sidebar">
             <img id="profile-pic" src="/images/default.png" height="134" width="134"><br>
             <div id="profile-info">
                 Karma: <span class="karma"><%=karma%></span>
                 Joined: <span class="joined"><%= created %></span>
-            </div>  
+            </div>
 
             <a class="btn btn-block btn-primary" href="/u/<%= profile_user %>/posts">Posts</a><br>
             <a class="btn btn-block btn-outline-primary" href="/u/<%= profile_user %>/comments">Comments</a><br>
@@ -49,11 +49,11 @@
         <div class="main">
                 <%- include('../partials/sort') %>
 
-                <% if (posts != undefined) { 
+                <% if (posts != undefined) {
                     posts.forEach((post) => { %>
             <article class="post" data-ref="<%= post._id %>">
                 <div class="arrows">
-                        <div class="upvote-post auth-req"><i class="far fa-caret-square-up"></i></div> 
+                        <div class="upvote-post auth-req"><i class="far fa-caret-square-up"></i></div>
                         <span class="post-votes" data-ref="<%= post._id %>"><%= post.votes %></span>
                         <div class="downvote-post auth-req"><i class="far fa-caret-square-down"></i></div>
                 </div>
