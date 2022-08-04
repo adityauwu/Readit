@@ -27,7 +27,7 @@ A Website where you can post recently asked interview questions , written using 
 * API
 
 ###Images
-https://imgur.com/lk6eX8z
+<a href="https://imgur.com/lk6eX8z"><img src="https://i.imgur.com/lk6eX8z.png" title="source: imgur.com" /></a>
 
 https://imgur.com/5WnzDuc
 
