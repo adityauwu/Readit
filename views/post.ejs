@@ -2,6 +2,7 @@
 <html lang="en">
     <%- include('partials/head', {title: post.title}) %>
 
+<link rel="stylesheet" type="text/css" href="/css/auth.css">
 <body>
     <%- include('partials/nav', {user: locals.user}) %>
     <%- include('partials/jumbotron', {name: info.name}) %>
@@ -19,7 +20,7 @@
             </div>
 
         <div class="main">
-            <div class="comment-wrapper">
+            <div class="comment-wrapper" id="colorgib">
                 <article class="post" data-ref="<%= post._id %>">
                     <div class="arrows">
                                 <div class="upvote-post auth-req"><i class="far fa-caret-square-up"></i></div> 
